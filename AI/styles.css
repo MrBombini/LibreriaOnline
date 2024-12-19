@@ -1,0 +1,311 @@
+/* Variables y reset */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --background-color: #ecf0f1;
+    --text-color: #2c3e50;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--primary-color);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    animation: slideDown 0.5s ease;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.nav-link.active {
+    background-color: var(--secondary-color);
+}
+
+/* Contenido principal */
+.main-content {
+    margin-top: 80px;
+    padding: 2rem;
+    min-height: calc(100vh - 80px);
+}
+
+/* Animaciones */
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(0.3);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Clases de animación */
+.fade-in {
+    animation: fadeIn 1s ease;
+}
+
+.slide-in {
+    animation: slideIn 0.5s ease;
+}
+
+.bounce-in {
+    animation: bounce 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Tarjetas de libros */
+.grid-libros {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.libro-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.libro-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Formularios */
+.form-animado {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.input-animado {
+    width: 100%;
+    padding: 0.8rem;
+    margin: 0.5rem 0;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.input-animado:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+.btn-animado {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-animado:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+.titulo-animado {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.titulo-animado::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: var(--secondary-color);
+    animation: lineWidth 1s ease forwards;
+}
+
+@keyframes lineWidth {
+    to {
+        width: 100%;
+    }
+}
+
+.vista {
+    padding: 2rem;
+    display: block;
+}
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+input, textarea, button {
+    padding: 0.5rem;
+}
+
+.filtros {
+    margin-bottom: 1rem;
+    display: flex;
+    gap: 1rem;
+} 
+
+/* Estilos para la disponibilidad */
+.disponibilidad {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.disponible {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.prestado {
+    background-color: #e74c3c;
+    color: white;
+}
+
+/* Estilos para los filtros */
+.filtros {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.filtros .input-animado {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* Estilos para grupos de inputs */
+.input-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Estilos para la imagen del libro */
+.libro-imagen {
+    position: relative;
+    height: 200px;
+    background: #f5f6fa;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.libro-descripcion {
+    margin: 1rem 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Estilos para botones deshabilitados */
+.btn-animado:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Animación para los elementos del formulario */
+.input-grupo > * {
+    animation: slideIn 0.5s ease forwards;
+    opacity: 0;
+}
+
+.input-grupo > *:nth-child(1) { animation-delay: 0.1s; }
+.input-grupo > *:nth-child(2) { animation-delay: 0.2s; }
+.input-grupo > *:nth-child(3) { animation-delay: 0.3s; }
+.input-grupo > *:nth-child(4) { animation-delay: 0.4s; }
+.input-grupo > *:nth-child(5) { animation-delay: 0.5s; }

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Libro - Biblioteca Virtual</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <h1 style="color: white;">📚 BiblioVirtual</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="ver-libros.html" class="nav-link">Ver Libros</a></li>
+            <li><a href="registrar.html" class="nav-link active">Registrar</a></li>
+            <li><a href="solicitar.html" class="nav-link">Solicitar</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content slide-in">
+        <section id="registrar" class="vista">
+            <h2 class="titulo-animado">Registrar Nuevo Libro</h2>
+            <form id="form-registro" class="form-animado">
+                <input type="text" placeholder="Título" id="titulo" required class="input-animado">
+                <input type="text" placeholder="Autor" id="autor" required class="input-animado">
+                <input type="text" placeholder="ISBN" id="isbn" required class="input-animado">
+                <textarea placeholder="Descripción" id="descripcion" class="input-animado"></textarea>
+                <button type="submit" class="btn-animado">Registrar Libro</button>
+            </form>
+        </section>
+    </main>
+    <script src="js/app.js"></script>
+</body>
+</html> 

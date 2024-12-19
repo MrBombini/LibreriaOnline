@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Virtual</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <h1 style="color: white;">📚 BiblioVirtual</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="ver-libros.html" class="nav-link">Ver Libros</a></li>
+            <li><a href="registrar.html" class="nav-link">Registrar</a></li>
+            <li><a href="solicitar.html" class="nav-link">Solicitar</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content slide-in">
+        <section id="catalogo" class="vista">
+            <h2 class="titulo-animado">Catálogo Completo</h2>
+            
+            <div class="filtros">
+                <input type="text" id="buscar" placeholder="Buscar libro..." class="input-animado">
+                <select id="filtro-genero" class="input-animado">
+                    <option value="">Todos los géneros</option>
+                    <option value="ficcion">Ficción</option>
+                    <option value="no-ficcion">No Ficción</option>
+                    <option value="fantasia">Fantasía</option>
+                    <option value="ciencia">Ciencia</option>
+                    <option value="historia">Historia</option>
+                </select>
+                <select id="filtro-disponibilidad" class="input-animado">
+                    <option value="">Disponibilidad</option>
+                    <option value="disponible">Disponible</option>
+                    <option value="prestado">Prestado</option>
+                </select>
+            </div>
+
+            <div id="catalogo-libros" class="grid-libros">
+                <!-- Los libros se cargarán dinámicamente aquí -->
+            </div>
+        </section>
+    </main>
+    <script src="js/app.js"></script>
+</body>
+</html> 
